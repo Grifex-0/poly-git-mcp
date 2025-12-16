@@ -1,0 +1,16 @@
+/* TEAM */
+Maintainer: hyperpolymath
+Site: https://github.com/hyperpolymath
+Location: Amsterdam, Netherlands
+
+/* THANKS */
+Model Context Protocol: https://github.com/modelcontextprotocol
+GitHub: https://github.com/
+GitLab: https://gitlab.com/
+Gitea: https://gitea.io/
+Bitbucket: https://bitbucket.org/
+
+/* SITE */
+Last update: 2025-12-16
+Standards: RSR, MCP, Consent-Aware HTTP
+Software: Deno, ReScript
