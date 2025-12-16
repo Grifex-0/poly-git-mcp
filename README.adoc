@@ -1,0 +1,128 @@
+= poly-git-mcp
+:toc:
+:toc-placement!:
+
+Unified MCP server for Git forge management. Provides Model Context Protocol tools for interacting with GitHub, GitLab, Gitea, and Bitbucket through their respective CLI tools and APIs.
+
+toc::[]
+
+== Overview
+
+poly-git-mcp exposes Git forge capabilities through the Model Context Protocol (MCP), enabling AI assistants and other MCP clients to manage repositories, issues, pull requests, and CI/CD across multiple Git platforms.
+
+== Adapters
+
+=== GitHub (13 tools)
+GitHub via `gh` CLI:
+
+* `gh_repo_list` - List repositories
+* `gh_repo_view` - View repository details
+* `gh_repo_clone` - Clone a repository
+* `gh_issue_list` - List issues
+* `gh_issue_view` - View an issue
+* `gh_issue_create` - Create an issue
+* `gh_pr_list` - List pull requests
+* `gh_pr_view` - View a pull request
+* `gh_pr_create` - Create a pull request
+* `gh_pr_merge` - Merge a pull request
+* `gh_release_list` - List releases
+* `gh_workflow_list` - List workflow runs
+* `gh_auth_status` - Check authentication status
+
+=== GitLab (12 tools)
+GitLab via `glab` CLI:
+
+* `glab_project_list` - List projects
+* `glab_project_view` - View project details
+* `glab_issue_list` - List issues
+* `glab_issue_view` - View an issue
+* `glab_issue_create` - Create an issue
+* `glab_mr_list` - List merge requests
+* `glab_mr_view` - View a merge request
+* `glab_mr_create` - Create a merge request
+* `glab_mr_merge` - Merge a merge request
+* `glab_pipeline_list` - List pipelines
+* `glab_ci_status` - Show CI/CD status
+* `glab_auth_status` - Check authentication status
+
+=== Gitea (11 tools)
+Gitea/Forgejo via `tea` CLI:
+
+* `tea_repo_list` - List repositories
+* `tea_repo_view` - View repository details
+* `tea_issue_list` - List issues
+* `tea_issue_view` - View an issue
+* `tea_issue_create` - Create an issue
+* `tea_pr_list` - List pull requests
+* `tea_pr_view` - View a pull request
+* `tea_pr_create` - Create a pull request
+* `tea_release_list` - List releases
+* `tea_org_list` - List organizations
+* `tea_login_list` - List configured logins
+
+=== Bitbucket (10 tools)
+Bitbucket via REST API:
+
+* `bb_repo_list` - List repositories
+* `bb_repo_view` - View repository details
+* `bb_issue_list` - List issues
+* `bb_pr_list` - List pull requests
+* `bb_pr_view` - View a pull request
+* `bb_pipeline_list` - List pipelines
+* `bb_branches` - List branches
+* `bb_commits` - List commits
+* `bb_workspaces` - List workspaces
+* `bb_user` - Get current user info
+
+== Requirements
+
+* https://deno.land/[Deno] runtime
+* https://cli.github.com/[GitHub CLI (gh)] (for GitHub tools)
+* https://gitlab.com/gitlab-org/cli[GitLab CLI (glab)] (for GitLab tools)
+* https://gitea.com/gitea/tea[tea] (for Gitea tools)
+* Bitbucket app password (for Bitbucket tools)
+
+== Configuration
+
+=== Bitbucket Authentication
+
+Set environment variables for Bitbucket API access:
+
+[source,bash]
+----
+export BITBUCKET_USERNAME=your-username
+export BITBUCKET_APP_PASSWORD=your-app-password
+----
+
+Create an app password at: https://bitbucket.org/account/settings/app-passwords/
+
+== Installation
+
+[source,bash]
+----
+git clone https://github.com/hyperpolymath/poly-git-mcp
+cd poly-git-mcp
+npm install
+npm run build
+----
+
+== Usage
+
+Run as MCP server:
+
+[source,bash]
+----
+deno run --allow-run --allow-read --allow-env --allow-net main.js
+----
+
+Or use the systemd service:
+
+[source,bash]
+----
+systemctl --user enable poly-git-mcp
+systemctl --user start poly-git-mcp
+----
+
+== License
+
+MIT

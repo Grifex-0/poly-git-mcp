@@ -1,0 +1,98 @@
+#Start(1765927039540)
+
+  Warning number 3
+  /var/home/hyper/repos/poly-git-mcp/src/bindings/Deno.res:99:7-18
+
+   97 ┆     }
+   98 ┆   } catch {
+   99 ┆   | Exn.Error(e) => Error(Exn.message(e)->Option.getOr("Unknown error"
+      ┆ ))
+  100 ┆   }
+  101 ┆ }
+
+  deprecated: Error
+  Use `JsExn` instead
+
+  This can be automatically migrated by the ReScript migration tool. Run `rescript-tools migrate-all <project-root>` to run all automatic migrations available in your project, or `rescript-tools migrate <file>` to migrate a single file.
+
+
+  Warning number 3
+  /var/home/hyper/repos/poly-git-mcp/src/bindings/Deno.res:99:29-39
+
+   97 ┆     }
+   98 ┆   } catch {
+   99 ┆   | Exn.Error(e) => Error(Exn.message(e)->Option.getOr("Unknown error"
+      ┆ ))
+  100 ┆   }
+  101 ┆ }
+
+  deprecated: Stdlib.Exn.message
+  Use `JsExn.message` instead
+
+  This can be automatically migrated by the ReScript migration tool. Run `rescript-tools migrate-all <project-root>` to run all automatic migrations available in your project, or `rescript-tools migrate <file>` to migrate a single file.
+
+
+  Warning number 3
+  /var/home/hyper/repos/poly-git-mcp/src/bindings/Deno.res:113:7-18
+
+  111 ┆     }
+  112 ┆   } catch {
+  113 ┆   | Exn.Error(e) => Error(Exn.message(e)->Option.getOr("Unknown error"
+      ┆ ))
+  114 ┆   }
+  115 ┆ }
+
+  deprecated: Error
+  Use `JsExn` instead
+
+  This can be automatically migrated by the ReScript migration tool. Run `rescript-tools migrate-all <project-root>` to run all automatic migrations available in your project, or `rescript-tools migrate <file>` to migrate a single file.
+
+
+  Warning number 3
+  /var/home/hyper/repos/poly-git-mcp/src/bindings/Deno.res:113:29-39
+
+  111 ┆     }
+  112 ┆   } catch {
+  113 ┆   | Exn.Error(e) => Error(Exn.message(e)->Option.getOr("Unknown error"
+      ┆ ))
+  114 ┆   }
+  115 ┆ }
+
+  deprecated: Stdlib.Exn.message
+  Use `JsExn.message` instead
+
+  This can be automatically migrated by the ReScript migration tool. Run `rescript-tools migrate-all <project-root>` to run all automatic migrations available in your project, or `rescript-tools migrate <file>` to migrate a single file.
+
+
+  Warning number 3
+  /var/home/hyper/repos/poly-git-mcp/src/bindings/Deno.res:126:7-18
+
+  124 ┆     }
+  125 ┆   } catch {
+  126 ┆   | Exn.Error(e) => Error(Exn.message(e)->Option.getOr("Unknown error"
+      ┆ ))
+  127 ┆   }
+  128 ┆ }
+
+  deprecated: Error
+  Use `JsExn` instead
+
+  This can be automatically migrated by the ReScript migration tool. Run `rescript-tools migrate-all <project-root>` to run all automatic migrations available in your project, or `rescript-tools migrate <file>` to migrate a single file.
+
+
+  Warning number 3
+  /var/home/hyper/repos/poly-git-mcp/src/bindings/Deno.res:126:29-39
+
+  124 ┆     }
+  125 ┆   } catch {
+  126 ┆   | Exn.Error(e) => Error(Exn.message(e)->Option.getOr("Unknown error"
+      ┆ ))
+  127 ┆   }
+  128 ┆ }
+
+  deprecated: Stdlib.Exn.message
+  Use `JsExn.message` instead
+
+  This can be automatically migrated by the ReScript migration tool. Run `rescript-tools migrate-all <project-root>` to run all automatic migrations available in your project, or `rescript-tools migrate <file>` to migrate a single file.
+
+#Done(1765927039861)
