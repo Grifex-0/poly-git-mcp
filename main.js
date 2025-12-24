@@ -5,10 +5,10 @@
 // poly-git-mcp - Git forge MCP server
 // Adapters: GitHub (gh), GitLab (glab), Gitea (tea), Bitbucket (API)
 
-import * as GitHub from "./lib/es6/src/adapters/GitHub.js";
-import * as GitLab from "./lib/es6/src/adapters/GitLab.js";
-import * as Gitea from "./lib/es6/src/adapters/Gitea.js";
-import * as Bitbucket from "./lib/es6/src/adapters/Bitbucket.js";
+import * as GitHub from "./lib/es6/src/adapters/GitHub.res.js";
+import * as GitLab from "./lib/es6/src/adapters/GitLab.res.js";
+import * as Gitea from "./lib/es6/src/adapters/Gitea.res.js";
+import * as Bitbucket from "./lib/es6/src/adapters/Bitbucket.res.js";
 
 const SERVER_INFO = {
   name: "poly-git-mcp",
