@@ -78,13 +78,55 @@ Bitbucket via REST API:
 * `bb_workspaces` - List workspaces
 * `bb_user` - Get current user info
 
+== Runtime Mode
+
+[IMPORTANT]
+====
+**Local-Agent Mode Only** — This MCP server wraps CLI tools (`gh`, `glab`, `tea`) and uses REST APIs (Bitbucket). It requires `--allow-run` and `--allow-net` permissions. It cannot run in Hosted-HTTP mode due to CLI dependencies.
+====
+
+|===
+|Mode |Supported |Notes
+
+|Local-Agent (stdio)
+|✓ Yes
+|Primary mode. Runs locally, executes CLI commands.
+
+|Hosted-HTTP
+|✗ No
+|Cannot wrap CLI tools from a hosted environment.
+|===
+
+== Security Boundary
+
+[WARNING]
+====
+This MCP server executes external CLI commands using Deno's `--allow-run` permission and makes API calls with `--allow-net`. The security boundary is your local Git forge authentication.
+====
+
+**What this means:**
+
+* GitHub: Uses `gh auth login` session or `GITHUB_TOKEN`
+* GitLab: Uses `glab auth login` session or `GITLAB_TOKEN`
+* Gitea: Uses `tea login` configuration
+* Bitbucket: Uses `BITBUCKET_USERNAME` + `BITBUCKET_APP_PASSWORD`
+* The MCP client (e.g., Claude) can perform any action your credentials allow
+
+**Recommendations:**
+
+1. Use tokens with minimal necessary scopes
+2. Consider separate tokens for MCP access
+3. Avoid tokens with `delete` or `admin` permissions
+4. Review tool calls before approving in your MCP client
+5. For Bitbucket, create a dedicated app password with limited scope
+
 == Requirements
 
-* https://deno.land/[Deno] runtime
-* https://cli.github.com/[GitHub CLI (gh)] (for GitHub tools)
-* https://gitlab.com/gitlab-org/cli[GitLab CLI (glab)] (for GitLab tools)
-* https://gitea.com/gitea/tea[tea] (for Gitea tools)
-* Bitbucket app password (for Bitbucket tools)
+* https://deno.land/[Deno] runtime (v2.0+)
+* https://cli.github.com/[GitHub CLI (gh)] (optional, for GitHub tools)
+* https://gitlab.com/gitlab-org/cli[GitLab CLI (glab)] (optional, for GitLab tools)
+* https://gitea.com/gitea/tea[tea] (optional, for Gitea tools)
+* Bitbucket app password (optional, for Bitbucket tools)
 
 == Configuration
 
@@ -106,13 +148,11 @@ Create an app password at: https://bitbucket.org/account/settings/app-passwords/
 ----
 git clone https://github.com/hyperpolymath/poly-git-mcp
 cd poly-git-mcp
-npm install
-npm run build
 ----
 
 == Usage
 
-Run as MCP server:
+Run as MCP server (Local-Agent mode):
 
 [source,bash]
 ----
@@ -126,6 +166,46 @@ Or use the systemd service:
 systemctl --user enable poly-git-mcp
 systemctl --user start poly-git-mcp
 ----
+
+== Smoke Test
+
+Verify the server is working correctly:
+
+[source,bash]
+----
+# 1. Check Deno can run the server
+deno run --allow-run --allow-read --allow-env --allow-net main.js &
+SERVER_PID=$!
+
+# 2. Verify at least one CLI is accessible
+gh --version || glab --version || tea --version
+
+# 3. Test authentication (pick your provider)
+gh auth status              # GitHub
+glab auth status            # GitLab
+tea login list              # Gitea
+
+# 4. Cleanup
+kill $SERVER_PID
+----
+
+**Expected smoke test results:**
+
+|===
+|Check |Expected Result
+
+|Server starts
+|No errors, listens on stdio
+
+|CLI available
+|At least one Git CLI returns version
+
+|Auth configured
+|CLI shows logged-in user
+
+|Tool call works
+|Returns repos/issues (if any exist)
+|===
 
 == License
 
