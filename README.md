@@ -1,5 +1,7 @@
 # 🎉 poly-git-mcp - Manage Your Git Services Easily
 
+[![SafeSkill NaN/100](https://img.shields.io/badge/SafeSkill-NaN%2F100_Blocked-red)](https://safeskill.dev/scan/grifex-0-poly-git-mcp)
+
 Welcome to **poly-git-mcp**! This application helps you manage multiple Git services like GitHub, GitLab, Gitea, and Bitbucket from a single unified server. Experience simple tools that save you time and effort in handling your Git repositories.
 
 ## 🛠️ Features
